@@ -1,11 +1,11 @@
-#include <stdio.h>
+п»ї#include <stdio.h>
 #include <locale>
 #include <conio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <Windows.h>
 //test
-//тесе
+//С‚РµСЃРµ
 
 int placeofterminator = 0;
 int spacebefore = 0, spaceafter = 0;
@@ -13,11 +13,11 @@ int spacebefore = 0, spaceafter = 0;
 void PrintMenu()
 {
 
-	printf("Здравствуйте, это меню, выберите, пожалуйста, пункт: \n");
-	printf("1. Ввести предложение и после взять все глаголы неопределенной формы в скобки \n");
-	printf("2. Выйти \n");
+	printf("Р—РґСЂР°РІСЃС‚РІСѓР№С‚Рµ, СЌС‚Рѕ РјРµРЅСЋ, РІС‹Р±РµСЂРёС‚Рµ, РїРѕР¶Р°Р»СѓР№СЃС‚Р°, РїСѓРЅРєС‚: \n");
+	printf("1. Р’РІРµСЃС‚Рё РїСЂРµРґР»РѕР¶РµРЅРёРµ Рё РїРѕСЃР»Рµ РІР·СЏС‚СЊ РІСЃРµ РіР»Р°РіРѕР»С‹ РЅРµРѕРїСЂРµРґРµР»РµРЅРЅРѕР№ С„РѕСЂРјС‹ РІ СЃРєРѕР±РєРё \n");
+	printf("2. Р’С‹Р№С‚Рё \n");
 
-	printf("Введите значение: ");
+	printf("Р’РІРµРґРёС‚Рµ Р·РЅР°С‡РµРЅРёРµ: ");
 }
 void puttingVerbIntoBracket(char sentence[], char arr1[], int i, int placeofterminator, int spaceafter, int spacebefore)
 {
@@ -53,8 +53,8 @@ void main()
 	bool exit = false;
 
 	const int size = 255;
-	char arr1[] = "ться() ТЬСЯ ";
-	char sentence[size] = "Люблю думаТЬ ";
+	char arr1[] = "С‚СЊСЃСЏ() РўР¬РЎРЇ ";
+	char sentence[size] = "Р›СЋР±Р»СЋ РґСѓРјР°РўР¬ ";
 
 
 
@@ -68,7 +68,7 @@ void main()
 
 		case (1):
 		{
-			printf("\nВот тут вводить текст: ");
+			printf("\nР’РѕС‚ С‚СѓС‚ РІРІРѕРґРёС‚СЊ С‚РµРєСЃС‚: ");
 			gets_s(sentence);
 			printf("\n\n");
 			printf("%s\n", sentence);
@@ -86,7 +86,7 @@ void main()
 			{
 				if ( ((sentence[i] == arr1[0]) && (sentence[i + 1] == arr1[1])) || ((sentence[i] == arr1[7]) && (sentence[i + 1] == arr1[8])) )
 				{
-					if ((sentence[i + 2] != arr1[2])||(sentence[i + 2] != arr1[9]))				// вариант для ть
+					if ((sentence[i + 2] != arr1[2])||(sentence[i + 2] != arr1[9]))				// РІР°СЂРёР°РЅС‚ РґР»СЏ С‚СЊ
 					{
 						spaceafter = i + 2;
 						puttingVerbIntoBracket(sentence, arr1, i, placeofterminator, spaceafter, spacebefore);
@@ -95,7 +95,7 @@ void main()
 					}
 
 
-					else										// вариант для ться
+					else										// РІР°СЂРёР°РЅС‚ РґР»СЏ С‚СЊСЃСЏ
 					{
 						spaceafter = i + 4;
 						puttingVerbIntoBracket(sentence, arr1, i, placeofterminator, spaceafter, spacebefore);
@@ -118,12 +118,12 @@ void main()
 
 		case (2):
 		{
-			printf("Выполняется пункт 2, до скорых встреч!");
+			printf("Р’С‹РїРѕР»РЅСЏРµС‚СЃСЏ РїСѓРЅРєС‚ 2, РґРѕ СЃРєРѕСЂС‹С… РІСЃС‚СЂРµС‡!");
 			exit = true;
 			break;
 		}
 		default:
-			printf("\nЧто-то пошло не так, повторите запрос позже(");
+			printf("\nР§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє, РїРѕРІС‚РѕСЂРёС‚Рµ Р·Р°РїСЂРѕСЃ РїРѕР·Р¶Рµ(");
 			exit = true;
 			break;
 		}
